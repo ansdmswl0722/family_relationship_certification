@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>resident list</title>
+    <link rel="stylesheet" href="/resources/style.css"/>
+</head>
+<body>
+    <h1> 주민 목록 </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>주민 이름</th>
+                <th>문서 내용</th>
+                <th>증명서 발급 기록</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tr th:each="item, i: ${resident.list}">
+            <td></td>
+            <td>
+                <ul>
+                    <li><a href="">가족관계증명서</a></li>
+                    <li><a href="">주민등록등본</a></li>
+                    <li><a href="">출생신고서</a></li>
+                    <li><a href="">사망신고서</a></li>
+                </ul>
+            </td>
+            <td><a href="">발급 목록</a></td>
+        <form>
+            <td><button type="submit">삭제</button></td>
+        </form>
+        </tr>
+    </table>
+</body>
+</html>
