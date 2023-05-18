@@ -1,5 +1,6 @@
 package com.nhnacademy.family_relationship_certification.config;
 
+import com.nhnacademy.family_relationship_certification.controller.ControllerBase;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -7,6 +8,8 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -16,9 +19,11 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
+import java.util.List;
+
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {com.nhnacademy.family_relationship_certification.controller.ControllerBase.class})
+@ComponentScan(basePackageClasses = {ControllerBase.class})
 public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -27,6 +32,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
+
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry){
@@ -67,6 +73,11 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
         templateResolver.setTemplateMode("HTML5");
 
         return templateResolver;
+    }
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+        argumentResolvers.add( new PageableHandlerMethodArgumentResolver());
     }
 }
 

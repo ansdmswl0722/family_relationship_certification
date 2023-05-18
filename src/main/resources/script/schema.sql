@@ -1,15 +1,15 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+-- SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+-- SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+-- SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- 1. 기존 테이블 삭제
-drop table if exists resident;
 drop table If exists birth_death_report_resident;
 drop table If exists family_relationship;
-drop table If exists household;
 drop table If exists household_movement_address;
 drop table If exists household_composition_resident;
+drop table If exists household;
 drop table If exists certificate_issue;
+drop table if exists resident;
 
 
 -- 2. 테이블 생성
@@ -98,7 +98,7 @@ create table certificate_issue
 
 
 -- 3. resident 테이블 데이터 추가
-insert into resident values(1, '남길동', '130914-1234561', '남', '1913-09-14 07:22:00', '자택', '경기도 성남시 분당구 대왕판교로645번길', '20210429090300', '주택', '강원도 고성군 금강산로 290번길');
+insert into resident values(1, '남길동', '130914-1234561', '남', '1913-09-14 07:22:00', '자택', '경기도 성남시 분당구 대왕판교로645번길', '2021-04-29 09:03:00', '주택', '강원도 고성군 금강산로 290번길');
 insert into resident values(2, '남석환', '540514-1234562', '남', '1954-05-14 17:30:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
 insert into resident values(3, '박한나', '551022-1234563', '여', '1955-10-22 11:15:00', '병원', '서울특별시 중구 세종대로 110번길', null, null, null);
 insert into resident values(4, '남기준', '790510-1234564', '남', '1979-05-10 20:45:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);

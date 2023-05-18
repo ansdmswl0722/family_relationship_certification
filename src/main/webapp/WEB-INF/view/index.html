@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>resident list</title>
@@ -16,8 +16,8 @@
                 <th>삭제</th>
             </tr>
         </thead>
-        <tr th:each="item, i: ${resident.list}">
-            <td></td>
+        <tr th:each="item :${residents}">
+            <td th:text="${item.name}"></td>
             <td>
                 <ul>
                     <li><a href="">가족관계증명서</a></li>
@@ -27,9 +27,9 @@
                 </ul>
             </td>
             <td><a href="">발급 목록</a></td>
-        <form>
-            <td><button type="submit">삭제</button></td>
-        </form>
+            <form>
+                <td><button type="submit">삭제</button></td>
+            </form>
         </tr>
     </table>
 </body>

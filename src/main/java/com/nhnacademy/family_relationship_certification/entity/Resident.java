@@ -1,15 +1,16 @@
 package com.nhnacademy.family_relationship_certification.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Table(name = "resident")
 @Entity
-@Setter
 @Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Resident {
     @Id
     @Column(name = "resident_serial_number")
