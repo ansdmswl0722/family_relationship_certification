@@ -10,3 +10,19 @@ Content-Type: application/json
   "birthPlaceCode" : "병원",
   "registrationBaseAddress" : "전라남도 나주시 금계23번길"
 }
+###
+PUT /residents/6 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name" : "이선미",
+  "residentRegistrationNumber" : "851205-1234566",
+  "genderCode" : "여",
+  "birthDate" : "1985-12-05T22:01:00",
+  "birthPlaceCode" : "병원",
+  "registrationBaseAddress" : "전라남도 나주시 금계23번길",
+  "deathDate" : "2023-03-22T10:24:10",
+  "deathPlaceCode" : "병원",
+  "deathPlaceAddress" : "경기도 수원시 팔달구 효원로 7번길"
+}

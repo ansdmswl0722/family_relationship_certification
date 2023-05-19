@@ -47,14 +47,19 @@ class ResidentServiceTest {
 
     @Test
     void testCreateResident() {
-        ResidentRegisterRequest request =
-                new ResidentRegisterRequest("member",
-                        "123456-1234567",
-                        "남",
-                        LocalDateTime.now(),
-                        "병원",
-                        "전라남도 나주시 금계23번길");
+        ResidentRegisterRequest request = ResidentRegisterRequest.builder()
+                .name("member")
+                .residentRegistrationNumber("123456-1234567")
+                .genderCode("남")
+                .birthDate(LocalDateTime.now())
+                .birthPlaceCode("병원")
+                .registrationBaseAddress("전라남도 나주시 금계23번길")
+                .build();
         ResidentId id = residentService.createResident(request);
         assertThat(residentRepository.existsById(id.getId())).isTrue();
+    }
+    @Test
+    void testUpdate() {
+
     }
 }

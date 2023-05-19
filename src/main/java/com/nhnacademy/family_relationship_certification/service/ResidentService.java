@@ -6,9 +6,9 @@ import com.nhnacademy.family_relationship_certification.domain.ResidentRegisterR
 import com.nhnacademy.family_relationship_certification.entity.Resident;
 import com.nhnacademy.family_relationship_certification.repository.ResidentRepository;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.acls.model.NotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -34,5 +34,27 @@ public class ResidentService {
                 .build();
         residentRepository.saveAndFlush(resident);
         return new ResidentId(resident.getResidentId());
+    }
+
+    public void update(Integer id,ResidentRegisterRequest request) {
+        if(!residentRepository.existsById(id)){
+            throw new NotFoundException("존재하지 않는 아이디 입니다.");
+        }
+        Resident resident = Resident
+                .builder()
+                .residentId(id)
+                .name(request.getName())
+                .residentRegistrationNumber(request.getResidentRegistrationNumber())
+                .genderCode(request.getGenderCode())
+                .birthDate(request.getBirthDate())
+                .birthPlaceCode(request.getBirthPlaceCode())
+                .registrationBaseAddress(request.getRegistrationBaseAddress())
+                .deathDate(request.getDeathDate())
+                .deathPlaceCode(request.getDeathPlaceCode())
+                .deathPlaceAddress(request.getDeathPlaceAddress())
+                .build();
+        residentRepository.saveAndFlush(resident);
+
+
     }
 }
