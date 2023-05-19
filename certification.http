@@ -1,0 +1,13 @@
+POST /residents HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name" : "남남일",
+  "residentRegistrationNumber" : "123456-1234567",
+  "genderCode" : "남",
+  "birthDate" : "2022-07-22 07:22:00",
+  "birthPlaceCode" : "병원",
+  "registrationBaseAddress" : "전라남도 나주시 금계23번길"
+}
+}

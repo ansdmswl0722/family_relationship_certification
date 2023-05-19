@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Table(name = "resident")
 @Entity
@@ -33,5 +34,8 @@ public class Resident {
     private String deathPlaceCode;
     @Column(name = "death_place_address")
     private String deathPlaceAddress;
+
+//    @OneToMany(mappedBy = "resident")
+//    private List<BirthDeathReportResident> reports;
 
 }

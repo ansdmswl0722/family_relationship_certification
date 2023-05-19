@@ -1,26 +1,29 @@
 package com.nhnacademy.family_relationship_certification.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Table(name = "birth_death_report_resident")
 @Entity
-@Setter
 @Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BirthDeathReportResident {
-    @Id
-    @Column(name = "resident_serial_number")
-    private Integer residentSerialNumber;
-    @Column(name = "birth_death_type_code")
-    private String birthDeathTypeCode;
-    @Column(name = "report_resident_serial_number")
-    private Integer reportResidentSerialNumber;
+   @EmbeddedId
+   private Pk pk;
+   @MapsId("residentSerialNumber")
+   @ManyToOne
+   @JoinColumn(name = "resident_serial_number")
+   private Resident resident;
+
+    @MapsId("reportResidentSerialNumber")
+    @ManyToOne
+    @JoinColumn(name = "report_resident_serial_number")
+    private Resident reportResident;
     @Column(name = "birth_death_report_date")
     private LocalDateTime birthDeathReportDate;
     @Column(name = "birth_report_qualifications_code")
@@ -32,5 +35,19 @@ public class BirthDeathReportResident {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Getter
+    @Setter
+    @Embeddable
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @EqualsAndHashCode
+    public static class Pk implements Serializable {
+        @Column(name = "resident_serial_number")
+        private Integer residentSerialNumber;
+        @Column(name = "report_resident_serial_number")
+        private Integer reportResidentSerialNumber;
+        @Column(name = "birth_death_type_code")
+        private String birthDeathTypeCode;
+    }
 
 }

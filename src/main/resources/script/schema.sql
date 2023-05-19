@@ -55,7 +55,7 @@ create table family_relationship
 
 create table household
 (
-    household_serial_number           int(11)      not null,
+    household_serial_number           int(11)      not null auto_increment,
     household_resident_serial_number  int(11)      not null,
     household_composition_date        date         not null,
     household_composition_reason_code varchar(20)  not null,
