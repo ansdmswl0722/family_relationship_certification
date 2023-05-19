@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class CertificateIssue {
     @Id
     @Column(name = "certificate_confirmation_number")
-    private Integer CertificateId;
+    private Integer certificateId;
     @ManyToOne
     @JoinColumn(name = "resident_serial_number")
     private Resident resident;

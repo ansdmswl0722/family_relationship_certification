@@ -2,10 +2,12 @@ package com.nhnacademy.family_relationship_certification.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class ResidentRegisterRequest {
     private String name;
