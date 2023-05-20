@@ -1,7 +1,6 @@
 package com.nhnacademy.family_relationship_certification.domain;
 
 import lombok.*;
-
 import javax.validation.constraints.NotNull;
 
 @Data

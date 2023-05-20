@@ -136,7 +136,7 @@ commit;
 
 
 -- 6. household 테이블 데이터 추가
-insert into household values(1, 4, '20091002', '세대분리', '경기도 성남시 분당구 대왕판교로 645번길');
+insert into household values(1, 4, '2009-10-02', '세대분리', '경기도 성남시 분당구 대왕판교로 645번길');
 
 commit;
 

@@ -50,3 +50,74 @@ Content-Type: application/json
 DELETE /residents/8/relationship/6
 Host: localhost:8080
 Content-Type: application/json
+
+### 출생등록
+POST /residents/4/birth
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "residentSerialNumber" : 8,
+  "birthDeathTypeCode" : "출생",
+  "birthReportQualificationsCode" : "부",
+  "phoneNumber" : "010-2345-6789"
+}
+
+###
+PUT /residents/4/birth/8
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "residentSerialNumber" : 8,
+  "birthDeathTypeCode" : "출생",
+  "birthReportQualificationsCode" : "부",
+  "emailAddress" : "12342@email.com",
+  "phoneNumber" : "010-2345-5555"
+}
+###
+DELETE /residents/4/birth/8
+Host: localhost:8080
+Content-Type: application/json
+
+
+### 사망등록
+POST /residents/4/death
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "residentSerialNumber" : 6,
+  "birthDeathTypeCode" : "사망",
+  "deathReportQualificationsCode" : "처제",
+  "phoneNumber" : "010-2345-6789"
+}
+###
+PUT /residents/4/death/6
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "residentSerialNumber" : 6,
+  "birthDeathTypeCode" : "사망",
+  "deathReportQualificationsCode" : "처제",
+  "emailAddress" : "12342@email.com",
+  "phoneNumber" : "010-2345-5555"
+}
+
+###
+DELETE /residents/4/death/6
+Host: localhost:8080
+Content-Type: application/json
+
+###
+POST /household
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "residentId" : "사망",
+  "householdCompositionDate" : "처제",
+  "CompositionReasonCode" : "12342@email.com",
+  "currentHouseMovementAddress" : "010-2345-5555"
+}

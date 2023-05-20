@@ -13,13 +13,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BirthDeathReportResident {
-   @EmbeddedId
-   private Pk pk;
-   @MapsId("residentSerialNumber")
-   @ManyToOne
-   @JoinColumn(name = "resident_serial_number")
-   private Resident resident;
-
+    @EmbeddedId
+    private Pk pk;
+    @MapsId("residentSerialNumber")
+    @ManyToOne
+    @JoinColumn(name = "resident_serial_number")
+    private Resident resident;
     @MapsId("reportResidentSerialNumber")
     @ManyToOne
     @JoinColumn(name = "report_resident_serial_number")
@@ -36,15 +35,13 @@ public class BirthDeathReportResident {
     private String phoneNumber;
 
     @Getter
-    @Setter
+    @Builder
     @Embeddable
     @AllArgsConstructor
     @NoArgsConstructor
     @EqualsAndHashCode
     public static class Pk implements Serializable {
-        @Column(name = "resident_serial_number")
         private Integer residentSerialNumber;
-        @Column(name = "report_resident_serial_number")
         private Integer reportResidentSerialNumber;
         @Column(name = "birth_death_type_code")
         private String birthDeathTypeCode;
