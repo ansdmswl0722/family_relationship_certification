@@ -1,14 +1,11 @@
-package com.nhnacademy.family_relationship_certification.service;
+package com.nhnacademy.family_relationship_certification.repository;
 
 import com.nhnacademy.family_relationship_certification.config.DatabaseConfig;
 import com.nhnacademy.family_relationship_certification.config.JpaConfig;
 import com.nhnacademy.family_relationship_certification.config.RootConfig;
 import com.nhnacademy.family_relationship_certification.config.WebConfig;
-import com.nhnacademy.family_relationship_certification.domain.RelationRequest;
-import com.nhnacademy.family_relationship_certification.domain.ResidentId;
-import com.nhnacademy.family_relationship_certification.domain.ResidentRegisterRequest;
+import com.nhnacademy.family_relationship_certification.entity.FamilyRelationship;
 import com.nhnacademy.family_relationship_certification.entity.Resident;
-import com.nhnacademy.family_relationship_certification.repository.ResidentRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,40 +30,14 @@ import static org.junit.jupiter.api.Assertions.*;
         )
 )
 @TestPropertySource("classpath:db.properties")
-class ResidentServiceTest {
-
-    @Autowired
-    ResidentService residentService;
+class FamilyRelationshipRepositoryTest {
     @Autowired
     ResidentRepository residentRepository;
+    @Autowired
+    FamilyRelationshipRepository repository;
 
     @Test
-    void testGetResidents() {
-        //Given
-        //When
-        //Then
-    }
-
-    @Test
-    void testCreateResident() {
-        ResidentRegisterRequest request = ResidentRegisterRequest.builder()
-                .name("member")
-                .residentRegistrationNumber("123456-1234567")
-                .genderCode("남")
-                .birthDate(LocalDateTime.now())
-                .birthPlaceCode("병원")
-                .registrationBaseAddress("전라남도 나주시 금계23번길")
-                .build();
-        ResidentId id = residentService.createResident(request);
-        assertThat(residentRepository.existsById(id.getId())).isTrue();
-    }
-    @Test
-    void testUpdate() {
-
-    }
-
-    @Test
-    void testAddRelationship() {
+    void test1() {
         Resident resident = Resident
                 .builder()
                 .name("남남이")
@@ -77,7 +48,29 @@ class ResidentServiceTest {
                 .registrationBaseAddress("광주")
                 .build();
         residentRepository.saveAndFlush(resident);
-        RelationRequest request = new RelationRequest(4,"부");
-        residentService.addRelationship(resident.getResidentId(),request);
+
+        Resident familyResident = residentRepository.findById(4).get();
+
+        FamilyRelationship familyRelationship = FamilyRelationship
+                .builder()
+                .pk(FamilyRelationship.Pk.builder()
+                        .baseResidentSerialNumber(resident.getResidentId())
+                        .familyResidentSerialNumber(4)
+                        .build())
+                .familyRelationshipCode("부")
+                .resident(resident)
+                .familyResident(familyResident)
+                .build();
+        repository.saveAndFlush(familyRelationship);
+    }
+
+    @Test
+    void test2() {
+        Boolean result = repository.existsById(FamilyRelationship.Pk.builder()
+                .baseResidentSerialNumber(1)
+                .familyResidentSerialNumber(2)
+                .build());
+        assertThat(result).isTrue();
+
     }
 }

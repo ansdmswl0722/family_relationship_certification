@@ -18,12 +18,16 @@ public class FamilyRelationship {
     @MapsId("baseResidentSerialNumber")
     @JoinColumn(name = "base_resident_serial_number")
     private Resident resident;
+    @ManyToOne
+    @MapsId("familyResidentSerialNumber")
+    @JoinColumn(name = "family_resident_serial_number")
+    private Resident familyResident;
     @Column(name = "family_relationship_code")
     private String familyRelationshipCode;
 
 
     @Getter
-    @Setter
+    @Builder
     @Embeddable
     @AllArgsConstructor
     @NoArgsConstructor

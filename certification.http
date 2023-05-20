@@ -26,3 +26,27 @@ Content-Type: application/json
   "deathPlaceCode" : "병원",
   "deathPlaceAddress" : "경기도 수원시 팔달구 효원로 7번길"
 }
+
+###
+POST /residents/8/relationship
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "familySerialNumber": 4,
+  "relationship": "부"
+}
+
+###
+PUT /residents/8/relationship/4
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "relationship": "삼촌"
+}
+
+###
+DELETE /residents/8/relationship/6
+Host: localhost:8080
+Content-Type: application/json

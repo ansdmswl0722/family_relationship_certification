@@ -16,7 +16,7 @@
                 <th>삭제</th>
             </tr>
         </thead>
-        <tr th:each="item :${residents}">
+        <tr th:each="item :${page.content}">
             <td th:text="${item.name}"></td>
             <td>
                 <ul>
@@ -32,5 +32,6 @@
             </form>
         </tr>
     </table>
+    <a th:href="@{/(page=${pageable.next().getPageNumber()})}">다음</a>
 </body>
 </html>
