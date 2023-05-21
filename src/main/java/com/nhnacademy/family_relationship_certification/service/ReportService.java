@@ -1,6 +1,6 @@
 package com.nhnacademy.family_relationship_certification.service;
 
-import com.nhnacademy.family_relationship_certification.domain.ReportRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.ReportRequest;
 import com.nhnacademy.family_relationship_certification.entity.BirthDeathReportResident;
 import com.nhnacademy.family_relationship_certification.entity.Resident;
 import com.nhnacademy.family_relationship_certification.repository.BirthDeathReportRepository;

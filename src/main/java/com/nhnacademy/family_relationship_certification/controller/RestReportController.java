@@ -1,6 +1,6 @@
 package com.nhnacademy.family_relationship_certification.controller;
 
-import com.nhnacademy.family_relationship_certification.domain.ReportRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.ReportRequest;
 import com.nhnacademy.family_relationship_certification.exception.ValidationFailedException;
 import com.nhnacademy.family_relationship_certification.service.ReportService;
 import org.springframework.http.HttpStatus;

@@ -4,9 +4,9 @@ import com.nhnacademy.family_relationship_certification.config.DatabaseConfig;
 import com.nhnacademy.family_relationship_certification.config.JpaConfig;
 import com.nhnacademy.family_relationship_certification.config.RootConfig;
 import com.nhnacademy.family_relationship_certification.config.WebConfig;
-import com.nhnacademy.family_relationship_certification.domain.RelationRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.RelationRequest;
 import com.nhnacademy.family_relationship_certification.domain.ResidentId;
-import com.nhnacademy.family_relationship_certification.domain.ResidentRegisterRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.ResidentRegisterRequest;
 import com.nhnacademy.family_relationship_certification.entity.Resident;
 import com.nhnacademy.family_relationship_certification.repository.ResidentRepository;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration

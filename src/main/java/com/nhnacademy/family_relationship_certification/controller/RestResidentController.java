@@ -1,8 +1,8 @@
 package com.nhnacademy.family_relationship_certification.controller;
 
-import com.nhnacademy.family_relationship_certification.domain.RelationRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.RelationRequest;
 import com.nhnacademy.family_relationship_certification.domain.ResidentId;
-import com.nhnacademy.family_relationship_certification.domain.ResidentRegisterRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.ResidentRegisterRequest;
 import com.nhnacademy.family_relationship_certification.exception.ValidationFailedException;
 import com.nhnacademy.family_relationship_certification.service.ResidentService;
 import org.springframework.http.HttpStatus;

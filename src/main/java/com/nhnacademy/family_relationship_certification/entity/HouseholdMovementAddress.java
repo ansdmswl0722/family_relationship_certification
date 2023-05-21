@@ -4,7 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -37,7 +37,7 @@ public class HouseholdMovementAddress {
         private Integer householdId;
 
         @Column(name = "house_movement_report_date")
-        private LocalDateTime houseMovementReportDate;
+        private LocalDate houseMovementReportDate;
     }
 
 }

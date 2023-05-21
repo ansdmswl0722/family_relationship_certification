@@ -1,11 +1,10 @@
-package com.nhnacademy.family_relationship_certification.repository;
+package com.nhnacademy.family_relationship_certification.service;
 
 import com.nhnacademy.family_relationship_certification.config.DatabaseConfig;
 import com.nhnacademy.family_relationship_certification.config.JpaConfig;
 import com.nhnacademy.family_relationship_certification.config.RootConfig;
 import com.nhnacademy.family_relationship_certification.config.WebConfig;
-import com.nhnacademy.family_relationship_certification.entity.Household;
-import com.nhnacademy.family_relationship_certification.entity.Resident;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration
 @Transactional
@@ -29,24 +30,15 @@ import static org.junit.jupiter.api.Assertions.*;
         )
 )
 @TestPropertySource("classpath:db.properties")
-class HouseholdRepositoryTest {
+class HouseholdServiceTest {
 
     @Autowired
-    HouseholdRepository householdRepository;
-    @Autowired
-    ResidentRepository residentRepository;
+    HouseholdService householdService;
 
     @Test
-    void test1() {
-        Resident resident = residentRepository.findById(4).get();
-        Household household = Household
-                .builder()
-                .resident(resident)
-                .householdCompositionDate(LocalDate.now())
-                .householdCompositionReasonCode("전입")
-                .currentHouseMovementAddress("경기도 성남시 분당구 대왕판교로 645번길")
-                .build();
-        householdRepository.saveAndFlush(household);
-
+    void testDateFormatter() {
+        String date = "12341212";
+        LocalDate result = householdService.dateFormatter(date);
+        assertThat(result).isEqualTo(LocalDate.parse("1234-12-12"));
     }
 }

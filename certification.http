@@ -110,14 +110,45 @@ DELETE /residents/4/death/6
 Host: localhost:8080
 Content-Type: application/json
 
-###
+### 세대 등록
 POST /household
 Host: localhost:8080
 Content-Type: application/json
 
 {
-  "residentId" : "사망",
-  "householdCompositionDate" : "처제",
-  "CompositionReasonCode" : "12342@email.com",
-  "currentHouseMovementAddress" : "010-2345-5555"
+  "residentId" : 2,
+  "householdCompositionDate" : "2009-10-31",
+  "compositionReasonCode" : "전입",
+  "currentHouseMovementAddress" : "경기도 성남시 분당구 불정로 90번길"
 }
+
+### 세대 삭제
+DELETE /household/2
+Host: localhost:8080
+Content-Type: application/json
+
+### 세대 전입 주소 등록
+POST /household/2/movement
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "houseMovementReportDate" : "20071031",
+  "houseMovementAddress" : "서울시 동작구 상도로 940번길 ",
+  "lastAddressYN" : "Y"
+}
+
+### 세대 전입 주소 수정
+PUT /household/2/movement/20071031
+Host: localhost:8080
+Content-Type: application/json
+
+{
+ "houseMovementAddress" : "서울시 동작구 상도로 940번길 ",
+  "lastAddressYN" : "N"
+}
+
+### 세대 전입 주소 삭제
+DELETE /household/2/movement/20071031
+Host: localhost:8080
+Content-Type: application/json

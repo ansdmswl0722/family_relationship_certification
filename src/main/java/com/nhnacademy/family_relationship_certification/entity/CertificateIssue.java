@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Table(name = "certificate_issue")
 @Entity
@@ -24,6 +24,6 @@ public class CertificateIssue {
     @Column(name = "certificate_type_code")
     private String certificateTypeCode;
     @Column(name = "certificate_issue_date")
-    private LocalDateTime certificateIssueDate;
+    private LocalDate certificateIssueDate;
 
 }

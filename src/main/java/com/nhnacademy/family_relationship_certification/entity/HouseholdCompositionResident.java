@@ -3,9 +3,8 @@ package com.nhnacademy.family_relationship_certification.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Table(name = "household_composition_resident")
 @Entity
@@ -27,7 +26,7 @@ public class HouseholdCompositionResident {
     @JoinColumn(name = "resident_serial_number")
     private Resident resident;
     @Column(name = "report_date")
-    private LocalDateTime reportDate;
+    private LocalDate reportDate;
     @Column(name = "household_relationship_code")
     private String householdRelationshipCode;
     @Column(name = "household_composition_change_reason_code")

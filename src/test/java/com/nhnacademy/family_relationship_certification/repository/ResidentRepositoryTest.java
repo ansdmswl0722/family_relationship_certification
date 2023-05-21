@@ -4,8 +4,6 @@ import com.nhnacademy.family_relationship_certification.config.DatabaseConfig;
 import com.nhnacademy.family_relationship_certification.config.JpaConfig;
 import com.nhnacademy.family_relationship_certification.config.RootConfig;
 import com.nhnacademy.family_relationship_certification.config.WebConfig;
-import com.nhnacademy.family_relationship_certification.domain.ResidentRegisterRequest;
-import com.nhnacademy.family_relationship_certification.entity.BirthDeathReportResident;
 import com.nhnacademy.family_relationship_certification.entity.Resident;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -17,9 +15,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import java.time.LocalDateTime;
 

@@ -1,9 +1,9 @@
 package com.nhnacademy.family_relationship_certification.service;
 
-import com.nhnacademy.family_relationship_certification.domain.RelationRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.RelationRequest;
 import com.nhnacademy.family_relationship_certification.domain.ResidentId;
 import com.nhnacademy.family_relationship_certification.domain.ResidentNameDto;
-import com.nhnacademy.family_relationship_certification.domain.ResidentRegisterRequest;
+import com.nhnacademy.family_relationship_certification.domain.restRequest.ResidentRegisterRequest;
 import com.nhnacademy.family_relationship_certification.entity.FamilyRelationship;
 import com.nhnacademy.family_relationship_certification.entity.Resident;
 import com.nhnacademy.family_relationship_certification.repository.FamilyRelationshipRepository;

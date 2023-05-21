@@ -11,8 +11,6 @@ Usrc/main/java/com/nhnacademy/family_relationship_certification/WebAppInitialize
 mvnw.cmd,1/f/1f1763f358c257ea3515417352b82b0165647ad1
 â
 Ysrc/main/java/com/nhnacademy/family_relationship_certification/config/DatabaseConfig.java,6/3/634c74e864fc7c8850f74476645b35909bcba58a
-ó
-gsrc/main/java/com/nhnacademy/family_relationship_certification/entity/HouseholdCompositionResident.java,9/c/9ce162dd28400ca0fffc72fea9a59a3f2f43bd3b
 Ñ
 Tsrc/main/java/com/nhnacademy/family_relationship_certification/config/JpaConfig.java,3/c/3c0dcfb3432571ab1ba34616250657a534cc5bab
 ç
@@ -31,8 +29,6 @@ W
 'src/main/webapp/WEB-INF/view/index.html,7/9/79a76300ab28fa87e8a2036cf98b64eea77e4ec8
 õ
 ksrc/main/java/com/nhnacademy/family_relationship_certification/repository/FamilyRelationshipRepository.java,3/3/33f0af1875ac479bb961792660b978f0eb14520d
-è
-_src/test/java/com/nhnacademy/family_relationship_certification/service/ResidentServiceTest.java,f/e/fe1617f2df6f362fc97299eefa2499c92e7aeb46
 ë
 asrc/main/java/com/nhnacademy/family_relationship_certification/controller/ResidentController.java,a/6/a665a2c2e14a594e3dbda1372f9d7edf93e82552
 í

@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Table(name = "household")
 @Entity
@@ -25,7 +25,7 @@ public class Household {
     private Resident resident;
 
     @Column(name = "household_composition_date")
-    private LocalDateTime householdCompositionDate;
+    private LocalDate householdCompositionDate;
 
     @Column(name = "household_composition_reason_code")
     private String householdCompositionReasonCode;
