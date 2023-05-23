@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>주민등록등본</title>
+    <link rel="stylesheet" href="/resources/document.css"/>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th colspan="5">
+            <div>주민등록등본</div>
+            <div>(발급일 :<span th:text="${issueDate}"></span>,증명서확인번호 :<span th:text="${certificateNumber}"></span>)</div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td colspan="2">세대주 성명</td>
+        <td th:text="${세대주}"></td>
+        <td>
+            <div>세대구성</div>
+            <div>사유 및 일자</div>
+        </td>
+        <td colspan="2">
+            <div th:text=""></div>
+            <div th:text=""></div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">주소</td>
+        <td colspan="2">신고일</td>
+    </tr>
+    <tr>
+        <td>세대주 관계</td>
+        <td>성명</td>
+        <td colspan="2">주민등록번호</td>
+        <td>신고일</td>
+        <td>변동사유</td>
+    </tr>
+    <tr th:each="item :${page.content}">
+        <td th:text="">세대주 관계</td>
+        <td th:text="">성명</td>
+        <td colspan="2" th:text="">주민등록번호</td>
+        <td th:text="">신고일</td>
+        <td th:text="">변동사유</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

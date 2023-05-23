@@ -33,4 +33,7 @@ public class Household {
     @Column(name = "current_house_movement_address")
     private String currentHouseMovementAddress;
 
+
+
+
 }

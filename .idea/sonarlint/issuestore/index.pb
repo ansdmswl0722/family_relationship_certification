@@ -15,8 +15,6 @@ Ysrc/main/java/com/nhnacademy/family_relationship_certification/config/DatabaseC
 Tsrc/main/java/com/nhnacademy/family_relationship_certification/config/JpaConfig.java,3/c/3c0dcfb3432571ab1ba34616250657a534cc5bab
 ç
 ]src/main/java/com/nhnacademy/family_relationship_certification/config/DatabaseProperties.java,5/1/51877b34aa7cdf2c7271e577268718a14fb31e9e
-Ñ
-Tsrc/main/java/com/nhnacademy/family_relationship_certification/config/WebConfig.java,6/b/6b08ddf6e02fe3c9e4b356b3137d7879595f067b
 Ö
 Usrc/main/java/com/nhnacademy/family_relationship_certification/config/RootConfig.java,b/0/b0777a57c6997fc621f9c44590052f6f03fd6a46
 7
@@ -25,12 +23,8 @@ Usrc/main/java/com/nhnacademy/family_relationship_certification/config/RootConfi
 Zsrc/main/java/com/nhnacademy/family_relationship_certification/domain/ResidentNameDto.java,d/6/d6bb073a87322fc67a457c34ed4d3ee975af3dfe
 ó
 gsrc/main/java/com/nhnacademy/family_relationship_certification/exception/ValidationFailedException.java,4/9/497cfe06bd94f427018ade1bf9b0a860ac3c311d
-W
-'src/main/webapp/WEB-INF/view/index.html,7/9/79a76300ab28fa87e8a2036cf98b64eea77e4ec8
 õ
 ksrc/main/java/com/nhnacademy/family_relationship_certification/repository/FamilyRelationshipRepository.java,3/3/33f0af1875ac479bb961792660b978f0eb14520d
-ë
-asrc/main/java/com/nhnacademy/family_relationship_certification/controller/ResidentController.java,a/6/a665a2c2e14a594e3dbda1372f9d7edf93e82552
 í
 bsrc/main/java/com/nhnacademy/family_relationship_certification/domain/ResidentRegisterRequest.java,7/a/7a15cfec2130210a8db4a09feac6f865fd41a775
 ü

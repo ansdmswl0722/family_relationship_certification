@@ -1,4 +1,4 @@
-package com.nhnacademy.family_relationship_certification.controller;
+package com.nhnacademy.family_relationship_certification.controller.api;
 
 import com.nhnacademy.family_relationship_certification.domain.HouseholdId;
 import com.nhnacademy.family_relationship_certification.domain.restRequest.HouseholdRequest;
