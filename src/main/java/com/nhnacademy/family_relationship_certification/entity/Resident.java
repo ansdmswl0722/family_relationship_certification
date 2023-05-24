@@ -36,5 +36,6 @@ public class Resident {
     private String deathPlaceAddress;
     @OneToMany(mappedBy = "resident")
     private List<BirthDeathReportResident> reports;
-
+    @OneToMany(mappedBy = "resident" )
+    private List<FamilyRelationship> relationships;
 }

@@ -1,8 +1,9 @@
 package com.nhnacademy.family_relationship_certification.domain;
 
 import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class ResidentId {
     private Integer id;
 

@@ -1,8 +1,7 @@
 package com.nhnacademy.family_relationship_certification.service;
 
+import com.nhnacademy.family_relationship_certification.domain.*;
 import com.nhnacademy.family_relationship_certification.domain.restRequest.RelationRequest;
-import com.nhnacademy.family_relationship_certification.domain.ResidentId;
-import com.nhnacademy.family_relationship_certification.domain.ResidentNameDto;
 import com.nhnacademy.family_relationship_certification.domain.restRequest.ResidentRegisterRequest;
 import com.nhnacademy.family_relationship_certification.entity.FamilyRelationship;
 import com.nhnacademy.family_relationship_certification.entity.Resident;
@@ -12,6 +11,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.acls.model.NotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ResidentService {
@@ -87,26 +90,49 @@ public class ResidentService {
 
     public RelationRequest modifiedRelationship(Integer id, Integer familyId,
                                                 RelationRequest request) {
-        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(id,familyId);
-        if(!repository.existsById(pk)) {
+        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(id, familyId);
+        if (!repository.existsById(pk)) {
             throw new NotFoundException("존재하지 않는 가족관계 입니다.");
         }
         Resident resident = residentRepository.findById(id).get();
         Resident familyResident = residentRepository.findById(familyId).get();
 
         FamilyRelationship familyRelationship = new FamilyRelationship(
-                pk,resident,familyResident,request.getRelationship()
+                pk, resident, familyResident, request.getRelationship()
         );
-        RelationRequest response = new RelationRequest(familyId,request.getRelationship());
+        RelationRequest response = new RelationRequest(familyId, request.getRelationship());
         repository.saveAndFlush(familyRelationship);
         return response;
     }
 
     public void removeRelationship(Integer id, Integer familyId) {
-        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(id,familyId);
-        if(!repository.existsById(pk)) {
+        FamilyRelationship.Pk pk = new FamilyRelationship.Pk(id, familyId);
+        if (!repository.existsById(pk)) {
             throw new NotFoundException("존재하지 않는 가족관계 입니다.");
         }
-       repository.deleteById(pk);
+        repository.deleteById(pk);
+    }
+
+    public List<FamilyVO> selectRelationship(int residentId) {
+        RelationshipDto relationshipDto = residentRepository.getFamilyRelationship(residentId);
+        List<FamilyVO> list = new ArrayList<>();
+        FamilyVO user = new FamilyVO("본인",
+                relationshipDto.getName(),
+                relationshipDto.getBirthDate().format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일")),
+                relationshipDto.getResidentRegistrationNumber(),
+                relationshipDto.getGenderCode());
+        list.add(user);
+
+        for (RelationshipCodeDto resident : relationshipDto.getRelationships()) {
+            Resident member = resident.getFamilyResident();
+            FamilyVO family = new FamilyVO(resident.getFamilyRelationshipCode(),
+                    member.getName(),
+                    member.getBirthDate().format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일")),
+                    member.getResidentRegistrationNumber(),
+                    member.getGenderCode());
+            list.add(family);
+        }
+
+        return list;
     }
 }

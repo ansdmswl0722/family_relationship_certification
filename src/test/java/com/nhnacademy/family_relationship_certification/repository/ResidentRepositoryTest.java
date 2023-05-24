@@ -4,6 +4,7 @@ import com.nhnacademy.family_relationship_certification.config.DatabaseConfig;
 import com.nhnacademy.family_relationship_certification.config.JpaConfig;
 import com.nhnacademy.family_relationship_certification.config.RootConfig;
 import com.nhnacademy.family_relationship_certification.config.WebConfig;
+import com.nhnacademy.family_relationship_certification.domain.RelationshipDto;
 import com.nhnacademy.family_relationship_certification.entity.Resident;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -88,5 +90,11 @@ public class ResidentRepositoryTest {
                 .build();
         residentRepository.saveAndFlush(resident);
 
+    }
+
+    @Test
+    void getFamilyRelationship() {
+       RelationshipDto relationship = residentRepository.getFamilyRelationship(4);
+        assertThat(relationship.getRelationships().size()).isEqualTo(4);
     }
 }

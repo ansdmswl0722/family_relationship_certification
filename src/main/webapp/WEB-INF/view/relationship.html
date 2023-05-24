@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>가족관계증명서</title>
-    <link rel="stylesheet" href="/resources/document본.css"/>
+    <link rel="stylesheet" href="/resources/document.css"/>
 </head>
 <body>
 <table>
@@ -11,7 +11,7 @@
     <tr>
         <th colspan="5">
             <div>가족관계증명서</div>
-            <div>(발급일 :<span th:text="${issueDate}"></span>,증명서확인번호 :<span th:text="${certificateNumber}"></span>)</div>
+            <div>(발급일 :<span>-----</span>,증명서확인번호 :<span>~~~~</span>)</div>
         </th>
     </tr>
     </thead>
@@ -20,7 +20,7 @@
             <div>등록기준지</div>
             <div>(본적)</div>
         </td>
-        <td colspan="3" th:text="${본적}"></td>
+        <td colspan="3">본적</td>
     </tr>
     <tr>
         <td>구분</td>
@@ -29,12 +29,12 @@
         <td>주민등록번호</td>
         <td>성별</td>
     </tr>
-    <tr th:each="item :${page.content}">
-        <td th:text=""></td>
-        <td th:text=""></td>
-        <td th:text=""></td>
-        <td th:text=""></td>
-        <td th:text=""></td>
+    <tr th:each="item :${family}">
+        <td th:text="${item.relationshipCode}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.birthDate}"></td>
+        <td th:text="${item.residentRegistrationNumber}"></td>
+        <td th:text="${item.gender}"></td>
     </tr>
 </table>
 </body>

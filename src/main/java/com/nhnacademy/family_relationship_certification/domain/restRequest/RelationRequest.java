@@ -3,7 +3,6 @@ package com.nhnacademy.family_relationship_certification.domain.restRequest;
 import lombok.*;
 import javax.validation.constraints.NotNull;
 
-@Data
 @Builder
 @Getter
 @NoArgsConstructor

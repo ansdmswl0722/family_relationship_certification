@@ -26,7 +26,7 @@
             <td th:text="${item.name}"></td>
             <td>
                 <ul>
-                    <li><a href="">가족관계증명서</a></li>
+                    <li><a th:href="@{/residents/{number}/relationship(number=${item.residentId})}">가족관계증명서</a></li>
                     <li><a href="">주민등록등본</a></li>
                     <li><a href="">출생신고서</a></li>
                     <li><a href="">사망신고서</a></li>
