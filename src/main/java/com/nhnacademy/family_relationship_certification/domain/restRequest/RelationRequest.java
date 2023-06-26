@@ -5,7 +5,6 @@ import javax.validation.constraints.NotNull;
 
 @Builder
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public class RelationRequest {
     @NotNull

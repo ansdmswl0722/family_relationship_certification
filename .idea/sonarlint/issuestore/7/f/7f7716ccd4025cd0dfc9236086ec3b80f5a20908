@@ -2,22 +2,22 @@
 ‰
 java:S11926"lDefine a constant instead of duplicating this literal "ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì‹ ê³ ê¸°ë¡ ì…ë‹ˆë‹¤." 4 times.(˜óÿ8ñ¾åÅƒ1
 r
-java:S3655s"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‹µŸâÿÿÿÿÿ8ı¾åÅƒ1
+java:S36559"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—°ä„ÿÿÿÿÿ8¼ÖºÂƒ1
+m
+java:S3655["PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ø†Ì8ŞŸÛÂƒ1
 m
 java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(§ è8Ò¶Êéƒ1
 r
-java:S36559"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—°ä„ÿÿÿÿÿ8¼ÖºÂƒ1
-m
-java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ø†Ì8¼ÖºÂƒ1
-m
-java:S3655["PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ø†Ì8ŞŸÛÂƒ1
-r
-java:S36558"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‹µŸâÿÿÿÿÿ8¼ÖºÂƒ1
-r
 java:S3655:"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(É·µ½şÿÿÿÿ8½ÖºÂƒ1
 r
-java:S3655t"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—°ä„ÿÿÿÿÿ8ı¾åÅƒ1
+java:S3655s"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‹µŸâÿÿÿÿÿ8ı¾åÅƒ1
+m
+java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ø†Ì8¼ÖºÂƒ1
+r
+java:S3655u"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(É·µ½şÿÿÿÿ8ı¾åÅƒ1
 m
 java:S3655Z"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(§ è8Ò¶Êéƒ1
 r
-java:S3655u"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(É·µ½şÿÿÿÿ8ı¾åÅƒ1
+java:S3655t"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—°ä„ÿÿÿÿÿ8ı¾åÅƒ1
+r
+java:S36558"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‹µŸâÿÿÿÿÿ8¼ÖºÂƒ1

@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 @Builder
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public class MovementAddressRequest {
     private String houseMovementReportDate;

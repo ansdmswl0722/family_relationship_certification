@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class CertificateIssue {
     @Id
     @Column(name = "certificate_confirmation_number")
-    private Integer certificateId;
+    private Long certificateId;
     @ManyToOne
     @JoinColumn(name = "resident_serial_number")
     private Resident resident;
@@ -25,5 +25,4 @@ public class CertificateIssue {
     private String certificateTypeCode;
     @Column(name = "certificate_issue_date")
     private LocalDate certificateIssueDate;
-
 }

@@ -11,7 +11,7 @@
     <tr>
         <th colspan="5">
             <div>가족관계증명서</div>
-            <div>(발급일 :<span>-----</span>,증명서확인번호 :<span>~~~~</span>)</div>
+            <div>(발급일 :<span th:text="${issue.dateOfIssue}"></span>,증명서확인번호 :<span th:text="${issue.certificateId}"></span>)</div>
         </th>
     </tr>
     </thead>
@@ -20,7 +20,7 @@
             <div>등록기준지</div>
             <div>(본적)</div>
         </td>
-        <td colspan="3">본적</td>
+        <td colspan="3" th:text="${issue.baseAddress}"></td>
     </tr>
     <tr>
         <td>구분</td>

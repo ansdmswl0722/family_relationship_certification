@@ -1,0 +1,7 @@
+
+9
+java:S1643,"Use a StringBuilder instead.(Û–»ç8Ÿô¤·†1
+r
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(œÓÌ¦úÿÿÿÿ8¦ô¤·†1
+@
+java:S2119)"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8ªô¤·†1
